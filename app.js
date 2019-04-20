@@ -36,7 +36,7 @@ var cronJob1 = cron.job("* */59 * * * *", function(){// runs every 1 hour
   jobs.executorhourly();
   console.info('cron job completed');
 });
-var cronJob2 = cron.job("* */59 */23 * * *", function(){// runs every 15 minutes
+var cronJob2 = cron.job("* */59 */23 * * *", function(){// runs everyday at 23:59
   jobs.executordaily();
   console.info('cron job completed');
 });
