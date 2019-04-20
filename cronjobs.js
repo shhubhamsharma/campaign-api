@@ -25,7 +25,7 @@ module.exports.executor15 = function () {
     });
 }
 module.exports.executorhourly = function () {
-    Rules.find({ scheduleid: "2" }).then(res => {
+    Rules.find({ scheduleid: "2" }).then(async res => {
         await res.forEach(async element => {
             cpmData.aggregate([{
                 $match: {
@@ -47,7 +47,7 @@ module.exports.executorhourly = function () {
     });
 }
 module.exports.executordaily = function () {
-    Rules.find({ scheduleid: "3" }).then(res => {
+    Rules.find({ scheduleid: "3" }).then(async res => {
         await res.forEach(async element => {
             cpmData.aggregate([{
                 $match: {
