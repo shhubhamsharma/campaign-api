@@ -36,13 +36,15 @@ var cronJob1 = cron.job("* */59 * * * *", function(){// runs every 1 hour
   jobs.executorhourly();
   console.info('cron job completed');
 });
-var cronJob2 = cron.job("0 0 0 * * *", function(){// runs every 15 minutes
+var cronJob2 = cron.job("* */59 */23 * * *", function(){// runs every 15 minutes
   jobs.executordaily();
   console.info('cron job completed');
 });
 
 
 cronJob.start();
+cronJob1.start();
+cronJob2.start();
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
